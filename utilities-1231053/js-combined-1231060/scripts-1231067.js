@@ -2,13 +2,13 @@
 angular.module("v2App", []).config(["$routeProvider",
     function (a) {
         a.when("/", {
-            templateUrl: "views/main",
+            templateUrl: "web-help/views/main",
             controller: "MainCtrl"
         }).when("/request/:stream/:itsService", {
-            templateUrl: "views/request",
+            templateUrl: "web-help/views/request",
             controller: "RequestCtrl"
         }).when("/thankyou/:ticketId", {
-            templateUrl: "views/thankyou",
+            templateUrl: "web-help/views/thankyou",
             controller: "ThankyouCtrl"
         }).otherwise({
             redirectTo: "/"
