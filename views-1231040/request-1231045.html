@@ -15,7 +15,7 @@
 	<div class="form-container">
 		<form action="https://weapon.its.unimelb.edu.au/zendesk/ticket" method="post" novalidate="" id="SubmitForm" name="ticketForm">
 			<legend>Your contact details</legend>
-			<p><strong>Name:</strong> %globals_session_saml_attributes_cn_0%<br>
+			<p><strong>Name:</strong> %globals_user_metadata_CombinedName%<br>
 			<strong>Email:</strong> %globals_session_saml_attributes_mail_0%</p>
 			<div ng-init="genForm(stream, itsService);ticketForm.email=user_info.email" id="form_content"></div>
 			{{prefill()}}
