@@ -379,6 +379,7 @@ zendesk.filter("refineFilter", function () {
 					description: "We manage the approval and allocation of unimelb.edu.au subdomains.",
 					owner: "online services",
 					faq: 13,
+					group: "domains",
 					itemType: "technology",
 					form: ["domain", "hosting", "details", "web_manager", "web_manager_contact", "priority"]
 				}, {
