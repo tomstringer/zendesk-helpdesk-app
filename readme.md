@@ -20,4 +20,4 @@ The application uses a base template (the "Request web help" page) and inserts s
 
 Each view contains angular binding points that receive content from the main scripts.js controller (#1231067).
 
-scripts.js (#1231067) contains the angular controllers and is the main asset required to update, add and delete forms for the application.
+[scripts.js (#1231067)](https://github.com/tomstringer/zendesk-helpdesk-app/blob/master/utilities-1231053/js-combined-1231060/scripts-1231067.js) contains the angular controllers and is the main asset required to update, add and delete forms for the application.
