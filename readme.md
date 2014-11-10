@@ -2,6 +2,8 @@
 
 This is an angular.js application, originally written and developed by Val Lyashov, adapted by Tom Stringer for Online Services in 2014.
 
+https://staff.unimelb.edu.au/services/it-support/web-help
+
 ### Settings
 
 The app is hosted on Matrix CMS, using the Design Customisation #1216409.
