@@ -326,7 +326,7 @@ zendesk.filter("refineFilter", function () {
 					owner: "online services",
 					faq: 7,
 					itemType: "analytics",
-					group: "analytics",
+					group: "misc",
 					form: ["details", "priority"]
 		        }, {
 			        name: "Accessibility training",
@@ -348,7 +348,7 @@ zendesk.filter("refineFilter", function () {
 					owner: "online services",
 					faq: 9,
 					itemType: "misc",
-					group: "support",
+					group: "misc",
 					form: ["details", "priority"]
 				}, {
 					name: "Analytics",
@@ -356,7 +356,7 @@ zendesk.filter("refineFilter", function () {
 					owner: "online services",
 					faq: 10,
 					itemType: "analytics",
-					group: "analytics",
+					group: "misc",
 					form: ["url", "details", "priority"]
 				}, {
 					name: "Accessibility",
@@ -364,7 +364,7 @@ zendesk.filter("refineFilter", function () {
 					owner: "online services",
 					faq: 11,
 					itemType: "accessibility",
-					group: "accessibility",
+					group: "misc",
 					form: ["url", "details", "priority"]					
 				}, {
 					name: "Implementing or developing new features",
@@ -379,7 +379,7 @@ zendesk.filter("refineFilter", function () {
 					description: "We manage the approval and allocation of unimelb.edu.au subdomains.",
 					owner: "online services",
 					faq: 13,
-					group: "domains",
+					group: "misc",
 					itemType: "technology",
 					form: ["domain", "hosting", "details", "web_manager", "web_manager_contact", "priority"]
 				}, {
