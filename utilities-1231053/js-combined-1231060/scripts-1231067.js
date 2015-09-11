@@ -144,7 +144,7 @@ zendesk.filter("refineFilter", function () {
         	// #0 Access issues - Editing or administrative access
         	{
 	            "Relevant governance and guidelines": ["Access to edit or administer websites at the University generally requires some form of training."],
-	            "Things to include": ["Your request for editing or admin access to a University website or application will need to be approved by the relevant faculty/divisional web manager or site owner (you'll need to provide their contact details here)."],
+	            "Things to include": ["If you're asking for editing or admin access to a University website or application, your request will need to be approved by the relevant faculty/divisional web manager or site owner (you'll need to provide their contact details here)."],
 	            "Self-help resources": ["For information about available training, please refer to our <a href='https://webhelp.staff.unimelb.edu.au/hc/en-gb' target='_blank'>help documentation and community forum</a>."]
 	        }, 
 	        // #1 Access issues - Access to view a password-protected site
