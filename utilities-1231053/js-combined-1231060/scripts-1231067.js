@@ -448,7 +448,7 @@ zendesk.filter("refineFilter", function () {
                 label: "Hosting platform",
                 type: "select",
                 req: "",
-                options: ["Matrix CMS", "Wordpress CMS", "Confluence Wiki", "Static HTML", "Custom Application", "Other - please specify in the description", "Not sure"],
+                options: ["Matrix CMS", "Wordpress CMS", "Bespoke", "Pursuit", "events.unimelb", "Confluence Wiki", "Webfarm", "Custom Application", "Other - please specify in the description", "Not sure"],
                 section: "Platform"
             },
             current_site: {
