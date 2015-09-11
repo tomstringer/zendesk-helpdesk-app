@@ -172,9 +172,9 @@ zendesk.filter("refineFilter", function () {
 	        // #6 Training - Matrix CMS training
         	{
             "Training resources": ["We provide a <a href='https://webhelp.staff.unimelb.edu.au/hc/en-gb/categories/200076734-Training' target='_blank'>range of online training resources</a> for both authors and administrators."],
-            "Author training": ["Author training takes place online and provides the resources to perform the most common web publishing tasks using the Matrix CMS Edit+ tool.", "There is no charge for Author training."],
-            "Administrator training": ["Admin training is classroom-based and provides a background in the more advanced elements of the system required to manage a site.", "Admin training costs $165 per participant."],
-            "Custom training": ["If you're not sure what sort of training you need, or if you're after some form of customised training, please let us know what you need to be able to do and we'll help work out the best way to proceed."]
+            //"Author training": ["Author training takes place online and provides the resources to perform the most common web publishing tasks using the Matrix CMS Edit+ tool.", "There is no charge for Author training."],
+            //"Administrator training": ["Admin training is classroom-based and provides a background in the more advanced elements of the system required to manage a site.", "Admin training costs $165 per participant."],
+            "Custom training": ["In addition to training in Matrix CMS, we can also assist with Bespoke CMS, WordPress CMS and Pursuit. If you're not sure what sort of training you need, or if you're after some form of customised training, please let us know what you need to be able to do and we'll help work out the best way to proceed."]
 			},
         	// #7 Training - Analytics
         	{
@@ -269,31 +269,15 @@ zendesk.filter("refineFilter", function () {
 	        	description: "Let us know if something needs to be corrected, or could be improved.",
 	        	class: "feedback",
 	        	content: [{
-		        	name: "Content updates and corrections",
-					description: "Let us know if you've found something that needs to be updated or corrected.",
+		        	name: "Content updates, corrections, feedback and suggestions",
+					description: "Let us know if you've found something that needs to be updated, corrected or improved.",
 					owner: "online services",
 					faq: 2,
 					itemType: "content",
 					group: "misc",
 					form: ["url", "details", "priority"]     	
 		        }, {
-			        name: "Feedback on a site or feature",
-					description: "The feedback you provide is used to help improve our websites and applictions.",
-					owner: "online services",
-					faq: 3,
-					itemType: "misc",
-					group: "misc",
-					form: ["url", "details", "priority"]
-		        }, {
-			        name: "Suggestions for improvement",
-			        description: "Let us know if you've got an idea about how we might improve a website or application.",
-			        owner: "online services",
-			        faq: 4,
-			        itemType: "misc",
-			        group: "misc",
-			        form: ["url", "details", "priority"]
-		        }, {
-			        name: "Other",
+			        name: "Other - General request",
 			        description: "Not sure where else to ask a question or request assistance? Use this form and we'll see what we can do.",
 			        owner: "online services",
 					faq: 5,
@@ -307,29 +291,13 @@ zendesk.filter("refineFilter", function () {
 	        	description: "We offer training for a number of different systems and skills.",
 	        	class: "training",
 	        	content: [{
-		        	name: "Matrix CMS training",
-					description: "We run classroom, online and ad hoc training for the University's Matrix Content Management System (CMS).",
+		        	name: "Web editor training",
+					description: "We provide a range of classroom, online and ad hoc training for the University's web publishing platforms.",
 					owner: "online services",
 					faq: 6,
 					itemType: "technology",
 					group: "misc",
-					form: ["details", "matrix_training", "priority"]     	
-		        }, {
-			        name: "Analytics training",
-					description: "We provide training to help you understand how to implement and interpret the University's web analytics platform and reports.",
-					owner: "online services",
-					faq: 7,
-					itemType: "analytics",
-					group: "misc",
-					form: ["details", "priority"]
-		        }, {
-			        name: "Accessibility training",
-			        description: "We can provide training in how to ensure your website or application meets the University's adopted WCAG 2.0AA accesibility standards.",
-			        owner: "online services",
-			        faq: 8,
-			        itemType: "accessibility",
-			        group: "misc",
-			        form: ["details", "priority"]
+					form: ["details", "training", "priority"]
 		        }]
         	},
         	"Website management": {
@@ -527,11 +495,11 @@ zendesk.filter("refineFilter", function () {
                 req: "yes",
                 section: "Description"
             },
-            matrix_training: {
+            training: {
                 label: "Training type",
                 type: "select",
                 req: "yes",
-                options: ["Author", "Administrator", "Custom training", "Not sure"],
+                options: ["Editor (Matrix Edit+)", "Administrator (Matrix CMS)", "Custom training (Bespoke CMS etc)", "Not sure"],
                 section: "Description"
             },
             formid: {
