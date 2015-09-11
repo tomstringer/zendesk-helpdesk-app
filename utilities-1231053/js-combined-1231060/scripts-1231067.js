@@ -255,21 +255,13 @@ zendesk.filter("refineFilter", function () {
 	        	description: "We can help arrange or troubleshoot access to websites, servers and other applications.",
 	        	class: "access",
 	        	content: [{
-		        	name: "Editing or administrative access",
-					description: "We can help organise access to edit or administer websites and applications from around the University.",
+		        	name: "Access a University website or application",
+					description: "We can help organise and troubleshoot access to read, edit or administer websites and applications from around the University.",
 					owner: "online services",
 					faq: 0,
 					itemType: "technology",
 					group: "misc",
 					form: ["web_manager", "web_manager_contact", "platform", "url", "details", "priority"]     	
-		        }, {
-			        name: "Access to view a password-protected site",
-					description: "We can help troubleshoot 'read' access to websites and applications that are password-protected.",
-					owner: "online services",
-					faq: 1,
-					itemType: "technology",
-					group: "misc",
-					form: ["url", "details", "priority"]
 		        }]
         	},
             "Feedback, updates and suggestions": {
