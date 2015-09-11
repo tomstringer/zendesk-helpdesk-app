@@ -91,7 +91,8 @@ zendesk.filter("refineFilter", function () {
             fName: "",
             lName: "",
             userAgent: "",
-            matrixUserID: ""
+            matrixUserID: "",
+            matrixUserType: ""
         }, a.init = function (b) {
             a.userInfo = b
         }, a.getUserinfo = function (b) {
@@ -132,7 +133,7 @@ zendesk.filter("refineFilter", function () {
                     };
                 "undefined" == typeof g[j.section] && (g[j.section] = "<legend>" + j.section + "</legend>"), g[j.section] += k()
             }
-            g.hidden = "", g.hidden += '<input type="hidden" name="name" value="' + a.userInfo.fName + " " + a.userInfo.lName + '">', g.hidden += '<input type="hidden" name="email" value="' + a.userInfo.email + '">', g.hidden += '<input type="hidden" name="group" value="' + a.groups[f.group] + '">', g.hidden += '<input type="hidden" name="tags" value="' + f.tags + '">', g.hidden += '<input type="hidden" name="userAgent" value="' + a.userInfo.userAgent + '">', g.hidden += '<input type="hidden" name="matrixUserID" value="' + a.userInfo.matrixUserID + '">', g.hidden += '<input type="hidden" name="type" value="' + ("undefined" != typeof f.enquiryType ? f.enquiryType : "task") + '">', g.hidden += '<input type="hidden" name="category" value="' + b("urlUnstrip")(d) + '">', g.hidden += '<input type="hidden" name="service" value="' + b("urlUnstrip")(e) + '">';
+            g.hidden = "", g.hidden += '<input type="hidden" name="name" value="' + a.userInfo.fName + " " + a.userInfo.lName + '">', g.hidden += '<input type="hidden" name="email" value="' + a.userInfo.email + '">', g.hidden += '<input type="hidden" name="group" value="' + a.groups[f.group] + '">', g.hidden += '<input type="hidden" name="tags" value="' + f.tags + '">', g.hidden += '<input type="hidden" name="userAgent" value="' + a.userInfo.userAgent + '">', g.hidden += '<input type="hidden" name="matrixUserID" value="' + a.userInfo.matrixUserID + '">', g.hidden += '<input type="hidden" name="matrixUserType" value="' + a.userInfo.matrixUserType + '">', g.hidden += '<input type="hidden" name="type" value="' + ("undefined" != typeof f.enquiryType ? f.enquiryType : "task") + '">', g.hidden += '<input type="hidden" name="category" value="' + b("urlUnstrip")(d) + '">', g.hidden += '<input type="hidden" name="service" value="' + b("urlUnstrip")(e) + '">';
             var l = angular.element(document.getElementById("form_content"));
             for (var m in g) l.append(g[m]);
             return c(l.contents())(a), a.prefill(), g
