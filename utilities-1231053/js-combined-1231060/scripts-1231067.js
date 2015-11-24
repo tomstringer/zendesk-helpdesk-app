@@ -120,7 +120,7 @@ zendesk.filter("refineFilter", function () {
             for (var i in f.form) {
                 var j = this.formElements[f.form[i]],
                     k = function () {
-                        var b = '<div class="input-group"><span class="field-head"><p>' + j.label + "</p></span>";
+                        var b = '<div><label for="' + f.form[i] + '">' + j.label + "</label></div>";
                         if ("text" === j.type) return b + '<input ng-model="ticketForm.' + f.form[i] + '" class="field-select" ' + ("yes" === j.req ? "required" : "") + ' type="text"  name="' + f.form[i] + '" placeholder="' + a.getUserinfo(f.form[i]) + '">';
                         if ("select" === j.type) {
                         	h = b + '<fieldset><div><div class="styled-select"><select ng-model="ticketForm.' + f.form[i] + '" class="field-select" data-order="1" name="' + f.form[i] + '"  ' + ("yes" === j.req ? 'required="required"' : '') + '><option ng-selected="true" value="">Please select</option>';
