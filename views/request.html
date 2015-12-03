@@ -1,0 +1,32 @@
+<div class="with-aside">
+	<div class="bside">    
+
+    	<h1 id="title">{{itsService | capitalise}}</h1>
+    	
+    	<section class="lead left">
+	    	<p>{{currentItem.description}}</p>
+    	</section>
+    	
+    	<form action="https://weapon.its.unimelb.edu.au/zendesk/ticket" method="post" novalidate="" id="SubmitForm" name="ticketForm">
+			<h2>Your contact details</h2>
+			<p><strong>Name:</strong> %globals_user_metadata_CombinedName%<br>
+			<strong>Email:</strong> %globals_session_saml_attributes_mail_0%</p>
+			<fieldset ng-init="genForm(stream, itsService);ticketForm.email=user_info.email" id="form_content"></fieldset>
+			{{prefill()}}
+			<div class="btn-submit">
+				<input class="btn btn-large btn-block btn-info submit_btn" type="submit" name="submit_contact_form" value="Submit request" ng-disabled="!ticketForm.$valid">
+			</div> 
+		</form>
+	</div>
+
+	<aside>
+		<p><a class="button-hero-reverse" href="#/">Back to service list</a></p>	
+		
+		<div ng-repeat="(key,value) in getFaq(stream, itsService)">
+			<h2>{{key}}</h2>
+			<ul>
+				<li ng-repeat="each in value" ng-bind-html-unsafe="each">{{each}}</li>
+			</ul>
+    	</div>
+	</aside>
+</div>

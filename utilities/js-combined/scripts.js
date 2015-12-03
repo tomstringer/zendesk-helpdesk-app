@@ -120,10 +120,10 @@ zendesk.filter("refineFilter", function () {
             for (var i in f.form) {
                 var j = this.formElements[f.form[i]],
                     k = function () {
-                        var b = '<div class="input-group"><span class="field-head"><p>' + j.label + "</p></span>";
+                        var b = '<div><label for="' + f.form[i] + '">' + j.label + "</label></div>";
                         if ("text" === j.type) return b + '<input ng-model="ticketForm.' + f.form[i] + '" class="field-select" ' + ("yes" === j.req ? "required" : "") + ' type="text"  name="' + f.form[i] + '" placeholder="' + a.getUserinfo(f.form[i]) + '">';
                         if ("select" === j.type) {
-                        	h = b + '<select ng-model="ticketForm.' + f.form[i] + '" class="field-select" data-order="1" name="' + f.form[i] + '"  ' + ("yes" === j.req ? "required" : "") + ' ><option value="select" disabled="disabled" selected="selected">Please select</option>';
+                        	h = b + '<fieldset><div><div class="styled-select"><select ng-model="ticketForm.' + f.form[i] + '" class="field-select" data-order="1" name="' + f.form[i] + '"  ' + ("yes" === j.req ? 'required="required"' : '') + '><option ng-selected="true" value="">Please select</option>';
                             for (var c in j.options) h += '<option value="' + j.options[c] + '">' + j.options[c] + "</option>";
                             return a.chkDict(j.sub) && console.log("options present"), h
                         }
@@ -131,7 +131,7 @@ zendesk.filter("refineFilter", function () {
                         
                         return "radio" === j.type ? (h = b, h += '<label class="checkbox"><input ng-model="ticketForm.' + f.form[i] + '" ' + ("yes" === j.req ? "required" : "") + ' type="checkbox" value="" id="checkbox2" data-toggle="checkbox" name="' + f.form[i] + '" value="' + j.options[0] + '"><span class="icons"><span class="first-icon fui-checkbox-unchecked"></span><span class="second-icon fui-checkbox-checked"></span></span></label>') : "multi" === j.type ? b + '<textarea ng-model="ticketForm.' + f.form[i] + '" ' + ("yes" === j.req ? "required" : "") + ' class="field-select" col="50" rows="10" value="" name="' + f.form[i] + '"></textarea>' : void 0
                     };
-                "undefined" == typeof g[j.section] && (g[j.section] = "<legend>" + j.section + "</legend>"), g[j.section] += k()
+                "undefined" == typeof g[j.section] && (g[j.section] = "<h2>" + j.section + "</h2>"), g[j.section] += k()
             }
             g.hidden = "", g.hidden += '<input type="hidden" name="name" value="' + a.userInfo.fName + " " + a.userInfo.lName + '">', g.hidden += '<input type="hidden" name="email" value="' + a.userInfo.email + '">', g.hidden += '<input type="hidden" name="group" value="' + a.groups[f.group] + '">', g.hidden += '<input type="hidden" name="tags" value="' + f.tags + '">', g.hidden += '<input type="hidden" name="userAgent" value="' + a.userInfo.userAgent + '">', g.hidden += '<input type="hidden" name="matrixUserID" value="' + a.userInfo.matrixUserID + '">', g.hidden += '<input type="hidden" name="matrixUserType" value="' + a.userInfo.matrixUserType + '">', g.hidden += '<input type="hidden" name="type" value="' + ("undefined" != typeof f.enquiryType ? f.enquiryType : "task") + '">', g.hidden += '<input type="hidden" name="category" value="' + b("urlUnstrip")(d) + '">', g.hidden += '<input type="hidden" name="service" value="' + b("urlUnstrip")(e) + '">';
             var l = angular.element(document.getElementById("form_content"));
@@ -196,8 +196,7 @@ zendesk.filter("refineFilter", function () {
 	        // #10 Website management - Analytics
 	        {
 	            "Things to include": ["Please provide the URL of the site you need assistance with."],
-	            "Self-help resources": ['Before submitting your request, have a look through our <a href="https://webhelp.staff.unimelb.edu.au/hc/en-gb" target="_blank">help documentation and the community forum</a> – you might find your question has already been asked and answered by someone else!'],
-	            "Relevant governance and guidelines": ["The Web Enhancement Program is standardising and centralising the deployment and tracking of web analytics across the University.", "All sites with the new template header and footer injection have the centralised analytics tracking included automatically.", "For more information, please see the <a href='https://its.unimelb.edu.au/about/projects/web-enhancement-program/work-streams/reporting-and-analytics-stream' target='_blank'>Reporting and Analytics work stream</a> of the Web Enhancement Program."]
+	            "Self-help resources": ['Before submitting your request, have a look through our <a href="https://webhelp.staff.unimelb.edu.au/hc/en-gb" target="_blank">help documentation and the community forum</a> – you might find your question has already been asked and answered by someone else!']
 	        },
 	        // #11 Website management - Accessibility
 	        {
@@ -234,7 +233,7 @@ zendesk.filter("refineFilter", function () {
 	        // #17 Website management - New sites or redesigns
         	{
 	            "Self-help resources": ['Before submitting your request, have a look through our <a href="https://webhelp.staff.unimelb.edu.au/hc/en-gb" target="_blank">help documentation and the community forum</a> – you might find your question has already been asked and answered by someone else!'],
-	            "Relevant governance and guidelines": ["All websites on the unimelb.edu.au domain must meet University branding requirements.", "The University has a range of standards and policies that govern our web presence. See the <a href='https://its.unimelb.edu.au/wep' target='_blank'>Web Enhancement Program website</a> for more information."],
+	            "Relevant governance and guidelines": ["All websites on the unimelb.edu.au domain must meet University branding requirements.", "The University's Digital Design System documentation can be found at <a href='http://web.unimelb.edu.au' target='_blank'>web.unimelb</a>."],
 	            "Things to include": ["Please let us know the purpose of the new site or redesign, and what sort of assistance you're looking for."]
 	        }, 
 	        // #18 Website management - Archiving and retiring
@@ -313,29 +312,21 @@ zendesk.filter("refineFilter", function () {
 					group: "misc",
 					form: ["details", "priority"]
 				}, {
-					name: "Analytics",
-					description: "We operate the University's central Google Analytics account and can help you implement, report or interpret analytics for your site.",
+					name: "Analytics and Search Engine Optimisation (SEO)",
+					description: "We operate the University's central Google Analytics account and can help you implement, report or interpret analytics for your site. We can also provide advice on SEO best practice for your site.",
 					owner: "online services",
 					faq: 10,
 					itemType: "analytics",
 					group: "misc",
 					form: ["url", "details", "priority"]
 				}, {
-					name: "Accessibility",
+					name: "Accessibility standards (WCAG 2.0 AA)",
 					description: "We can help you ensure your website or application adheres to the University's adopted accessibility standards (WCAG 2.0 Level AA).",
 					owner: "online services",
 					faq: 11,
 					itemType: "accessibility",
 					group: "misc",
 					form: ["url", "details", "priority"]					
-				}, {
-					name: "Implementing or developing new features",
-					description: "We can help you implement or develop new features or tools for your website.",
-					owner: "online services",
-					faq: 12,
-					itemType: "design",
-					group: "support",
-					form: ["details", "priority"]
 				}, {
 					name: "Subdomains and DNS",
 					description: "We manage the approval and allocation of unimelb.edu.au subdomains.",
@@ -345,29 +336,8 @@ zendesk.filter("refineFilter", function () {
 					itemType: "technology",
 					form: ["domain", "hosting", "details", "web_manager", "web_manager_contact", "priority"]
 				}, {
-					name: "Hosting",
-					description: "We can help you navigate a range of web hosting options.",
-					owner: "online services",
-					faq: 14,
-					itemType: "technology",
-					form: ["details", "priority"]
-				}, {
-					name: "Design and templates",
-					description: "We can help you with web design and University template implementation.",
-					owner: "online services",
-					faq: 15,
-					itemType: "design",
-					form: ["details", "priority"]
-				}, {
-					name: "Standards, guidelines and policies",
-					description: "We can help you navigate the University's web standards, guidelines and policies, to help you ensure your website or application is compliant.",
-					owner: "online services",
-					faq: 16,
-					itemType: "misc",
-					form: ["details", "priority"]
-				}, {
 					name: "New sites or redesigns",
-					description: "We can help you develop new sites, or redesign existing sites.",
+					description: "We can provide advice and guidance if you're considering creating a new website or redesigning an existing site.",
 					owner: "online services",
 					faq: 17,
 					itemType: "design",
@@ -458,7 +428,7 @@ zendesk.filter("refineFilter", function () {
             hosting: {
                 label: "Where will the site be hosted?",
                 type: "select",
-                req: "no",
+                req: "yes",
                 options: ["Matrix CMS", "Web farm", "Other - Please specify in the description"],
                 sub: {
                     Other: {
