@@ -518,18 +518,4 @@ zendesk.filter("refineFilter", function () {
             misc: "20537955"
         }
     }  
-]), // End Form Control
-
-	zendesk.factory("$exceptionHandler", function () {
-    return function (a, b) {
-        Airbrake.push({
-            error: a,
-            environment: {
-                navigatorVendor: window.navigator.vendor
-            },
-            context: {
-                cause: b
-            }
-        })
-    }
-});
+]) // End Form Control
